@@ -26,25 +26,23 @@
 <script>
 import Feed from './Feed'
 import genres from '../static/GenresMap'
-import { ref } from '@vue/composition-api'
+
 export default {
   name: 'discover',
   components: {
     Feed
   },
-  setup() {
-    const genreId = ref('132')
-    const playlistId = ref('2098157264')
-
-    const getGenre = (pId, gId) => {
-      playlistId.value = pId
-      genreId.value = gId
-    }
+  data() {
     return {
       genres,
-      genreId,
-      playlistId,
-      getGenre
+      genreId: '132',
+      playlistId: '2098157264'
+    }
+  },
+  methods: {
+    getGenre(pId, gId) {
+      this.playlistId = pId
+      this.genreId = gId
     }
   }
 }

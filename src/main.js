@@ -5,10 +5,10 @@ import VueMq from 'vue-mq'
 import swc from 'svg-web-component'
 import vc from '@vue/composition-api'
 
-import Discover from '@/components/Discover'
-import Search from '@/components/Search'
+import Discover from './components/Discover.vue'
+import Search from './components/Search.vue'
 import Page404 from '@/components/Page404'
-import Likes from '@/components/Likes'
+import Likes from './components/Likes.vue'
 ;[Discover, Search, Page404, Likes].forEach(c => {
   Vue.component(c['name'], c)
 })

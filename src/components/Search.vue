@@ -39,48 +39,36 @@
 <script>
 import { Ebus } from '../Ebus.js'
 import apiService from '@/services/api'
-import { ref } from '@vue/composition-api'
 
 export default {
   name: 'search',
-  setup() {
-    const loading = ref(false)
-    const searchResults = ref(null)
-    const searchTerm = ref('')
-    const staticSearchTerm = ref(searchTerm)
-
-    const cue = song => {
-      Ebus.$emit('newCue', song, false)
-    }
-
-    const search = async e => {
-      e.preventDefault()
-      loading.value = true
-      staticSearchTerm.value = searchTerm.value
-      searchResults.value = await apiService.search(searchTerm.value)
-      setTimeout(() => {
-        loading.value = false
-      }, 10)
-    }
-
-    const getImageUrl = url => {
-      return (
-        'https://e-cdns-images.dzcdn.net/images/' +
-        url.substring(url.indexOf('/cover') + 1)
-      )
-    }
-
+  data() {
     return {
-      loading,
-      searchResults,
-      searchTerm,
-      staticSearchTerm,
-      cue,
-      search,
-      getImageUrl
+      loading: false,
+      searchResults: null,
+      searchTerm: '',
+      staticSearchTerm: ''
+    }
+  },
+  methods: {
+    cue(song) {
+      Ebus.$emit('newCue', song, false)
+    },
+    async search(e) {
+      e.preventDefault();
+      this.loading = true;
+      this.staticSearchTerm = this.searchTerm;
+      this.searchResults = await apiService.search(this.searchTerm);
+      setTimeout(() => {
+        this.loading = false;
+      }, 10);
+    },
+    getImageUrl(url) {
+      return 'https://e-cdns-images.dzcdn.net/images/' +
+        url.substring(url.indexOf('/cover') + 1);
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

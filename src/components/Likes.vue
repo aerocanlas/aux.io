@@ -24,36 +24,30 @@
 </template>
 
 <script>
-import { Ebus } from '../Ebus.js'
-import { computed } from '@vue/composition-api'
+import { Ebus } from '../Ebus.js';
 
 export default {
   name: 'likes',
-  setup(_, { root }) {
-    const likes = computed(() => {
-      return root.$store.state.likes
-    })
-
-    const removeFav = song => {
-      root.$store.commit('unlike', song)
-    }
-    const cue = song => {
-      Ebus.$emit('newCue', song, false)
-    }
-    const getImageUrl = url => {
+  computed: {
+    likes() {
+      return this.$store.state.likes;
+    },
+  },
+  methods: {
+    removeFav(song) {
+      this.$store.commit('unlike', song);
+    },
+    cue(song) {
+      Ebus.$emit('newCue', song, false);
+    },
+    getImageUrl(url) {
       return (
         'https://e-cdns-images.dzcdn.net/images/' +
         url.substring(url.indexOf('/cover') + 1)
-      )
-    }
-    return {
-      likes,
-      removeFav,
-      cue,
-      getImageUrl
-    }
-  }
-}
+      );
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

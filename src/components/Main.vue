@@ -1,19 +1,24 @@
 <template>
   <div class="main">
-    <component :is="currentView" />
+    <component :is="currentViewComponent" />
   </div>
 </template>
 
 <script>
-import { computed } from '@vue/composition-api'
+import Discover from '@/components/Discover';
+import Search from '@/components/Search';
+import Likes from '@/components/Likes';
+
 export default {
-  setup(_, { root }) {
-    const currentView = computed(() => {
-      return root.$store.state.currentView
-    })
-    return {
-      currentView
-    }
-  }
-}
+  components: {
+    Discover,
+    Search,
+    Likes
+  },
+  computed: {
+    currentViewComponent() {
+      return this.$store.state.currentView;
+    },
+  },
+};
 </script>

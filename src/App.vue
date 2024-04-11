@@ -19,7 +19,7 @@ export default {
   components: {
     Cue,
     Menu,
-    Main
+    Main,
   }
 }
 </script>
@@ -49,7 +49,7 @@ $side_min_size: minmax(50px, 1fr);
 
 .red {
   grid-area: 1 / 1 / 4 / 4;
-  background: #db1d40;
+  background: #232323;
 }
 
 .black {
@@ -60,10 +60,10 @@ $side_min_size: minmax(50px, 1fr);
 .menu {
   grid-area: 2 / 2 / 3 / 3;
   position: relative;
-  background: #7e2236;
+  background: #2e9999;
   padding: 30px 40px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .main {
@@ -89,11 +89,11 @@ $side_min_size: minmax(50px, 1fr);
 
 .cue {
   grid-area: 2 / 4 / 3 / 5;
-  background: #db1d40;
+  background: #9bfaed;
   overflow: hidden;
   padding: 30px 40px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   display: flex;
   justify-content: center;
   flex-direction: column;

@@ -25,6 +25,10 @@
           </template>
         </div>
       </div>
+      <!-- <div class="volume-slider">
+        <img class="logo__img" src="@/assets/img/Volume.png" alt="Logo" width="20px" />
+        <input type="range" min="0" max="1" step="0.01" v-model="volume" @input="setVolume" />
+      </div> -->
     </div>
   </div>
 </template>
@@ -79,13 +83,21 @@ export default {
       )
     }
 
+    // const volume = ref(1); // Initial volume level
+
+    // const setVolume = () => {
+    //   audio.volume = volume.value;
+    // };
+
     return {
       song,
       isPlaying,
       play,
       pause,
       hasLoaded,
-      getImageUrl
+      getImageUrl,
+      // volume,
+      // setVolume,
     }
   }
 }

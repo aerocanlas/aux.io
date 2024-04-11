@@ -10,7 +10,8 @@ export default new Vuex.Store({
   },
   mutations: {
     setCurrentView(state, view) {
-      state.currentView = view
+      console.log('Setting current view to:', view);
+      state.currentView = view;
     },
     likeSong(state, song) {
       state.likes.push(song)

@@ -54,64 +54,64 @@ export default [
     name: 'French Chanson',
     playlistId: 1288071965
   },
-  {
-    id: '98',
-    name: 'Classical',
-    playlistId: 1787912442
-  },
-  {
-    id: '173',
-    name: 'Films/Games',
-    playlistId: 2158831582
-  },
-  {
-    id: '464',
-    name: 'Metal',
-    playlistId: 1050179021
-  },
-  {
-    id: '169',
-    name: 'Soul & Funk',
-    playlistId: 1257789321
-  },
-  {
-    id: '2',
-    name: 'African Music',
-    playlistId: 2708423744
-  },
-  {
-    id: '12',
-    name: 'Arabic Music',
-    playlistId: 4128412802
-  },
-  {
-    id: '16',
-    name: 'Asian Music',
-    playlistId: 3030483942
-  },
-  {
-    id: '153',
-    name: 'Blues',
-    playlistId: 1689177971
-  },
-  {
-    id: '75',
-    name: 'Brazilian Music',
-    playlistId: 2988016026
-  },
-  {
-    id: '81',
-    name: 'Indian Music',
-    playlistId: 3969048206
-  },
-  {
-    id: '95',
-    name: 'Kids',
-    playlistId: 2134531422
-  },
-  {
-    id: '197',
-    name: 'Latin Music',
-    playlistId: 1128625503
-  }
+  // {
+  //   id: '98',
+  //   name: 'Classical',
+  //   playlistId: 1787912442
+  // },
+  // {
+  //   id: '173',
+  //   name: 'Films/Games',
+  //   playlistId: 2158831582
+  // },
+  // {
+  //   id: '464',
+  //   name: 'Metal',
+  //   playlistId: 1050179021
+  // },
+  // {
+  //   id: '169',
+  //   name: 'Soul & Funk',
+  //   playlistId: 1257789321
+  // },
+  // {
+  //   id: '2',
+  //   name: 'African Music',
+  //   playlistId: 2708423744
+  // },
+  // {
+  //   id: '12',
+  //   name: 'Arabic Music',
+  //   playlistId: 4128412802
+  // },
+  // {
+  //   id: '16',
+  //   name: 'Asian Music',
+  //   playlistId: 3030483942
+  // },
+  // {
+  //   id: '153',
+  //   name: 'Blues',
+  //   playlistId: 1689177971
+  // },
+  // {
+  //   id: '75',
+  //   name: 'Brazilian Music',
+  //   playlistId: 2988016026
+  // },
+  // {
+  //   id: '81',
+  //   name: 'Indian Music',
+  //   playlistId: 3969048206
+  // },
+  // {
+  //   id: '95',
+  //   name: 'Kids',
+  //   playlistId: 2134531422
+  // },
+  // {
+  //   id: '197',
+  //   name: 'Latin Music',
+  //   playlistId: 1128625503
+  // }
 ]

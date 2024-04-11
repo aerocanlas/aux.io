@@ -1,3 +1,54 @@
+<script>
+
+export default {
+  data() {
+    return {
+      exploreItems: [
+        {
+          name: 'Discover',
+          view: 'discover',
+          icon: 'album'
+        },
+        // {
+        //   name: 'Search',
+        //   view: 'search',
+        //   icon: 'search'
+        // },
+        // {
+        //   name: 'Your Tunes',
+        //   view: 'likes',
+        //   icon: 'heart'
+        // }
+      ],
+      servicesItems: [
+        {
+          name: 'Get The App',
+          view: 'page404',
+          icon: 'circle'
+        },
+        {
+          name: 'Premium',
+          view: 'page404',
+          icon: 'star'
+        },
+        {
+          name: 'Settings',
+          view: 'page404',
+          icon: 'cog'
+        }
+      ]
+    };
+  },
+  methods: {
+  changeView(view) {
+  this.$store.commit('setCurrentView', view.view);
+}
+  
+}
+
+};
+</script>
+
 <template>
   <aside class="menu">
     <template v-if="$mq === 'sm' || $mq === 'md'">
@@ -27,17 +78,15 @@
       <!-- Logo -->
 
       <div class="logo">
-        <img class="logo__img" src="@/assets/img/logo.png" alt="Logo" />
-        <h1 class="logo__label">TuneIn</h1>
+        <img class="logo__img" src="@/assets/img/logo.png" alt="Logo" width="80px" />
+        <h1 class="logo__label">aux.io</h1>
       </div>
       <!-- Explore -->
       <nav class="nav">
         <h3 class="nav__label">Explore</h3>
         <ul class="nav__list">
           <li
-            @click="changeView(item.view)"
-            v-for="item in exploreItems"
-            :key="item.name"
+            v-for="item in exploreItems" :key="item.view" @click="changeView(item)"
             class="nav__list__item"
           >
             <svg-icon class="icon" :name="item.icon"></svg-icon>
@@ -46,7 +95,7 @@
         </ul>
       </nav>
       <!-- Services -->
-      <nav class="nav services">
+      <!-- <nav class="nav services">
         <h3 class="nav__label">Services</h3>
         <ul class="nav__list">
           <li
@@ -59,75 +108,12 @@
             <span class="nav__list__link">{{ item.name }}</span>
           </li>
         </ul>
-      </nav>
-      <!-- Watermark -->
-      <div class="watermark">
-        <a
-          rel="noreferrer"
-          href="https://github.com/Datlyfe/tuneIn"
-          target="_blank"
-          class="watermark__label"
-        >
-          Github
-          <svg-icon name="github" class="icon" />
-        </a>
-      </div>
+      </nav> -->
     </template>
   </aside>
 </template>
 
-<script>
-import { ref } from '@vue/composition-api'
-export default {
-  setup(_, { root }) {
-    const exploreItems = ref([
-      {
-        name: 'Discover',
-        view: 'discover',
-        icon: 'album'
-      },
-      {
-        name: 'Search',
-        view: 'search',
-        icon: 'search'
-      },
-      {
-        name: 'Your Tunes',
-        view: 'likes',
-        icon: 'heart'
-      }
-    ])
 
-    const servicesItems = ref([
-      {
-        name: 'Get The App',
-        view: 'page404',
-        icon: 'circle'
-      },
-      {
-        name: 'Premium',
-        view: 'page404',
-        icon: 'star'
-      },
-      {
-        name: 'Settings',
-        view: 'page404',
-        icon: 'cog'
-      }
-    ])
-
-    const changeView = view => {
-      root.$store.commit('setCurrentView', view)
-    }
-
-    return {
-      exploreItems,
-      servicesItems,
-      changeView
-    }
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 .mobile-logo {
@@ -191,7 +177,7 @@ export default {
   display: flex;
   align-items: center;
   &__label {
-    text-transform: uppercase;
+    text-transform: normal;
     font-weight: 700;
     font-size: 25px;
     letter-spacing: 2px;
