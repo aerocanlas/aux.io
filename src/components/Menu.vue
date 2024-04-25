@@ -9,34 +9,34 @@ export default {
           view: 'discover',
           icon: 'album'
         },
-        // {
-        //   name: 'Search',
-        //   view: 'search',
-        //   icon: 'search'
-        // },
-        // {
-        //   name: 'Your Tunes',
-        //   view: 'likes',
-        //   icon: 'heart'
-        // }
+         {
+          name: 'Search',
+          view: 'search',
+          icon: 'search'
+        },
+        {
+         name: 'Your Tunes',
+          view: 'likes',
+           icon: 'heart'
+         }
       ],
-      servicesItems: [
-        {
-          name: 'Get The App',
-          view: 'page404',
-          icon: 'circle'
-        },
-        {
-          name: 'Premium',
-          view: 'page404',
-          icon: 'star'
-        },
-        {
-          name: 'Settings',
-          view: 'page404',
-          icon: 'cog'
-        }
-      ]
+      // servicesItems: [
+      //   {
+      //     name: 'Get The App',
+      //     view: 'page404',
+      //     icon: 'circle'
+      //   },
+      //   {
+      //     name: 'Premium',
+      //     view: 'page404',
+      //     icon: 'star'
+      //   },
+      //   {
+      //     name: 'Settings',
+      //     view: 'page404',
+      //     icon: 'cog'
+      //   }
+      // ]
     };
   },
   methods: {
@@ -94,9 +94,9 @@ export default {
           </li>
         </ul>
       </nav>
-      <!-- Services -->
-      <!-- <nav class="nav services">
-        <h3 class="nav__label">Services</h3>
+       Services
+      <nav class="nav services">
+        <!-- <h3 class="nav__label">Services</h3> -->
         <ul class="nav__list">
           <li
             @click="changeView(item.view)"
@@ -108,7 +108,7 @@ export default {
             <span class="nav__list__link">{{ item.name }}</span>
           </li>
         </ul>
-      </nav> -->
+      </nav> 
     </template>
   </aside>
 </template>
